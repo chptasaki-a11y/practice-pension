@@ -4,7 +4,6 @@ import AboutSection from './components/AboutSection';
 import RoomsSection from './components/RoomsSection';
 import FacilitiesSection from './components/FacilitiesSection';
 import CuisineSection from './components/CuisineSection';
-import PricingSection from './components/PricingSection';
 import AccessSection from './components/AccessSection';
 import ReservationSection from './components/ReservationSection';
 import Footer from './components/Footer';
@@ -18,7 +17,6 @@ export default function Home() {
       <RoomsSection />
       <FacilitiesSection />
       <CuisineSection />
-      <PricingSection />
       <AccessSection />
       <ReservationSection />
       <Footer />

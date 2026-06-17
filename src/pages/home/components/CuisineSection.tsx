@@ -1,5 +1,6 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { cuisineImages } from '@/mocks/homeData';
+import background from '@/assets/menu-background.png';
 
 const cuisineSrcs: Record<string, string> = {
   'cuisine-01': 'https://readdy.ai/api/search-image?query=Elegant%20appetizer%20platter%20on%20white%20ceramic%20plate%2C%20fine%20dining%20presentation%2C%20fresh%20seasonal%20vegetables%20and%20herbs%2C%20warm%20candlelit%20table%20setting%2C%20soft%20golden%20lighting%2C%20European%20country%20inn%20style%2C%20cream%20linen%20tablecloth%2C%20gourmet%20food%20photography&width=600&height=420&seq=cuisine-01-2026-e1&orientation=landscape',
@@ -13,7 +14,9 @@ export default function CuisineSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="cuisine" className="py-20 md:py-28 bg-background-50">
+    <section id="cuisine" className="py-20 md:py-28 bg-background-50 relative">
+      <img src={background} alt="お料理背景"
+       className="absolute top-0 left-0 w-full h-full object-cover" />
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
         <div
@@ -24,35 +27,47 @@ export default function CuisineSection() {
             お料理
           </h2>
           <p className="mt-4 text-foreground-500 text-sm max-w-lg mx-auto">
-            信州の豊かな恵みを、シェフが心を込めて一皿に。四季の移ろいを感じる本格洋食コースをお楽しみください。
+            <p className="text-foreground-500 text-sm leading-relaxed">
+              夕食は信州牛や季節の地野菜をふんだんに使った全7品のディナーコース。
+              朝食は焼きたてのパンとともに、高原の新鮮な卵や自家製ジャムをお楽しみいただけます。
+              食材はすべて地元の契約農家さんから直接仕入れています。
+            </p>
           </p>
-          <a
-            href="#pricing"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-full bg-accent-500 text-background-50 text-sm font-semibold hover:bg-accent-600 transition-colors duration-300 whitespace-nowrap cursor-pointer"
-          >
-            料金を見る
-            <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
-          </a>
+
         </div>
 
-        {/* Image banner */}
+        {/* Image grid: 上3枚・下2枚 */}
         <div
-          className="scroll-reveal flex gap-4 md:gap-6 overflow-hidden"
+          className="scroll-reveal flex flex-col items-center gap-4 md:gap-6"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
             transition: 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s',
           }}
         >
-          <div className="flex gap-4 md:gap-6 flex-nowrap">
-            {cuisineImages.map((img) => (
+          {/* 上段：3枚 */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            {cuisineImages.slice(0, 3).map((img) => (
               <div
                 key={img.seq}
-                className="flex-shrink-0 w-[260px] md:w-[320px] rounded-2xl overflow-hidden cursor-pointer group"
+                className="w-[260px] md:w-[320px] rounded-2xl overflow-hidden cursor-pointer group"
+              >
+                <img
+                  src={cuisineSrcs[img.seq]}
+                  alt={img.alt}
+                  className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <p className="mt-2 text-xs text-foreground-400 text-center">{img.alt}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 下段：2枚（中央寄せ） */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            {cuisineImages.slice(3, 5).map((img) => (
+              <div
+                key={img.seq}
+                className="w-[260px] md:w-[320px] rounded-2xl overflow-hidden cursor-pointer group"
               >
                 <img
                   src={cuisineSrcs[img.seq]}
@@ -74,11 +89,7 @@ export default function CuisineSection() {
             transition: 'opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s',
           }}
         >
-          <p className="text-foreground-500 text-sm leading-relaxed">
-            夕食は信州牛や季節の地野菜をふんだんに使った全7品のディナーコース。
-            朝食は焼きたてのパンとともに、高原の新鮮な卵や自家製ジャムをお楽しみいただけます。
-            食材はすべて地元の契約農家さんから直接仕入れています。
-          </p>
+
         </div>
       </div>
     </section>

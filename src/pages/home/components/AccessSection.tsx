@@ -18,6 +18,9 @@ export default function AccessSection() {
           <p className="mt-4 text-foreground-500 text-sm max-w-md mx-auto">
             信州の静かな森の中、日常から少し離れた場所に佇んでいます。
           </p>
+          <p className="mt-4 text-foreground-500 text-lg max-w-md mx-auto">
+            〒389-2502 <br />長野県下高井郡野沢温泉村豊郷1234
+          </p>
         </div>
 
         {/* Map */}
@@ -44,20 +47,7 @@ export default function AccessSection() {
         {/* Access info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Address */}
-          <div
-            className="scroll-reveal rounded-2xl bg-background-100 p-6 md:p-8"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-              transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s',
-            }}
-          >
-            <div className="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center mb-4">
-              <i className="ri-map-pin-line text-primary-500 text-lg w-5 h-5 flex items-center justify-center"></i>
-            </div>
-            <h4 className="font-heading text-lg font-semibold text-foreground-950 mb-2">住所</h4>
-            <p className="text-foreground-500 text-sm leading-relaxed">{accessInfo.address}</p>
-          </div>
+         
 
           {/* Train */}
           <div
@@ -90,25 +80,23 @@ export default function AccessSection() {
             <h4 className="font-heading text-lg font-semibold text-foreground-950 mb-2">お車でお越しの方</h4>
             <p className="text-foreground-500 text-sm leading-relaxed">{accessInfo.car}</p>
           </div>
-        </div>
-
-        {/* Bus info */}
-        <div
-          className="scroll-reveal mt-6 rounded-2xl bg-accent-50 p-5 md:p-6"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s',
-          }}
-        >
-          <div className="flex items-center gap-3">
-            <i className="ri-bus-line text-accent-600 text-lg w-5 h-5 flex items-center justify-center"></i>
-            <div>
-              <span className="text-sm font-semibold text-foreground-950">路線バス：</span>
-              <span className="text-sm text-foreground-500">{accessInfo.bus}</span>
+          {/* Bus */}
+          <div
+            className="scroll-reveal rounded-2xl bg-background-100 p-6 md:p-8"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s',
+            }}
+          >
+            <div className="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center mb-4">
+              <i className="ri-bus-line text-primary-500 text-lg w-5 h-5 flex items-center justify-center"></i>
             </div>
+            <h4 className="font-heading text-lg font-semibold text-foreground-950 mb-2">バスでお越しの方</h4>
+            <p className="text-foreground-500 text-sm leading-relaxed">{accessInfo.bus}</p>
           </div>
         </div>
+
       </div>
     </section>
   );

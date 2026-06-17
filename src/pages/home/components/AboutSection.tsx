@@ -4,7 +4,7 @@ export default function AboutSection() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-background-100">
+    <section id="about" className="py-20 md:py-28 bg-background-50">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         <div
           ref={ref}

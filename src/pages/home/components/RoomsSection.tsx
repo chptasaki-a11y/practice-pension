@@ -11,17 +11,17 @@ export default function RoomsSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="rooms" className="py-20 md:py-28 bg-background-50">
+    <section id="rooms" className="py-20 md:py-28 bg-background-100">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
         <div
           ref={ref}
-          className={`scroll-reveal ${isVisible ? 'is-visible' : ''} flex flex-col md:flex-row md:items-end justify-between mb-14 md:mb-18 gap-4`}
+          className={`scroll-reveal ${isVisible ? 'is-visible' : ''} flex flex-col items-center text-center justify-center mb-14 md:mb-18 gap-4`}
         >
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
             お部屋のご紹介
           </h2>
-          <p className="text-foreground-500 text-sm max-w-xs">
+          <p className="text-foreground-500 text-sm ">
             全3タイプのお部屋から、お好みのスタイルをお選びいただけます。
           </p>
         </div>
@@ -32,12 +32,8 @@ export default function RoomsSection() {
             const isFeatured = room.featured;
             return (
               <div
-  key={room.id}
-  className={`scroll-reveal group cursor-pointer rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 flex flex-col md:flex-row ${
-    isFeatured
-      ? 'bg-primary-600 text-background-50'
-      : 'bg-background-100 text-foreground-950'
-  }`}
+                key={room.id}
+                className="scroll-reveal group cursor-pointer rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 flex flex-col md:flex-row bg-background-50 text-foreground-950"
                 style={{
                   transitionDelay: `${idx * 0.15}s`,
                   opacity: isVisible ? 1 : 0,
@@ -46,19 +42,15 @@ export default function RoomsSection() {
                 }}
               >
                 {/* 左：画像 */}
-  <div className="relative overflow-hidden w-full md:w-[45%] lg:w-[40%] flex-shrink-0">
-    <img
-      src={roomImages[room.imageSeq]}
-      alt={room.name}
-      className="w-full h-full min-h-[220px] md:min-h-[280px] object-cover transition-transform duration-700 group-hover:scale-105"
-    />
+                <div className="relative overflow-hidden w-full md:w-[45%] lg:w-[40%] flex-shrink-0">
+                  <img
+                    src={roomImages[room.imageSeq]}
+                    alt={room.name}
+                    className="w-full h-full min-h-[220px] md:min-h-[280px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   {/* Status label */}
                   <span
-                    className={`absolute top-3 left-3 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium ${
-                      isFeatured
-                        ? 'bg-accent-500 text-background-50'
-                        : 'bg-background-50/90 text-foreground-700'
-                    }`}
+                    className="absolute top-3 left-3 inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-accent-500 text-background-50"
                   >
                     <i className="w-3 h-3 flex items-center justify-center ri-star-fill"></i>
                     {isFeatured ? 'おすすめ' : '定番'}
@@ -70,10 +62,10 @@ export default function RoomsSection() {
                   <p className={`text-xs tracking-wide uppercase mb-1 ${isFeatured ? 'text-background-50/70' : 'text-primary-500'}`}>
                     {room.nameEn}
                   </p>
-                  <h3 className={`font-heading text-xl md:text-2xl font-semibold mb-2 ${isFeatured ? 'text-background-50' : 'text-foreground-950'}`}>
+                  <h3 className="font-heading text-xl md:text-2xl font-semibold mb-2 text-foreground-950">
                     {room.name}
                   </h3>
-                  <div className={`flex items-center gap-4 text-xs ${isFeatured ? 'text-background-50/70' : 'text-foreground-400'}`}>
+                  <div className="flex items-center gap-4 text-xs text-foreground-400">
                     <span className="inline-flex items-center gap-1">
                       <i className="ri-user-line w-3.5 h-3.5 flex items-center justify-center"></i>
                       {room.capacity}
@@ -82,17 +74,22 @@ export default function RoomsSection() {
                       <i className="ri-aspect-ratio-line w-3.5 h-3.5 flex items-center justify-center"></i>
                       {room.size}
                     </span>
-                    
+
                   </div>
-                  <p className="text-sm leading-relaxed mt-4 text-background-50">
+                  <p className="text-xs leading-relaxed mt-4 text-primary-600">
                     アメニティ
                   </p>
-                  <p className={`text-xs leading-relaxed mb-4 ${isFeatured ? 'text-background-50/80' : 'text-foreground-500'}`}>
+                  <p className="text-[10px] leading-relaxed mb-4 text-foreground-500">
                     {room.description}
                   </p>
-                  <p className={`mt-4 pt-4 border-t text-sm font-semibold ${isFeatured ? 'border-background-50/20 text-background-50' : 'border-background-200 text-primary-600'}`}>
-                    {room.price}
-                  </p>
+                  <div className="mt-4 pt-4 border-t border-background-200 text-right">
+                    <span className="font-heading text-3xl md:text-4xl font-bold text-primary-500">
+                      {room.price}
+                    </span>
+                    <span className="text-sm ml-1 text-foreground-400">
+                      {room.per}
+                    </span>
+                  </div>
                 </div>
               </div>
             );
