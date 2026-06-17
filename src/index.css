@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Noto Sans JP', 'Noto Sans', sans-serif;
+  --font-label: 'Noto Sans JP', 'Noto Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: oklch(0.993 0.003 93);
+  color: oklch(0.127 0.022 85);
+}
+
+::selection {
+  background-color: oklch(0.67 0.16 93 / 0.3);
+  color: oklch(0.127 0.022 85);
+}
+
+/* Scroll reveal utility */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children reveal */
+.scroll-reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Decorative elements */
+.decorative-line {
+  position: relative;
+}
+
+.decorative-line::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: oklch(0.67 0.16 93);
+  border-radius: 1px;
+}
+
+/* Parallax subtle effect */
+.parallax-subtle {
+  transition: transform 0.3s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.97 0.004 90);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.55 0.06 76);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.38 0.04 74);
+}
