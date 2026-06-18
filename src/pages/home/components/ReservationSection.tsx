@@ -11,7 +11,7 @@ export default function ReservationSection() {
   ];
 
   return (
-    <section id="reservation" className="py-20 md:py-28 bg-background-100">
+    <section id="reservation" className="py-20 md:py-28 bg-primary-500">
       <div className="max-w-[900px] mx-auto px-6 md:px-10 lg:px-16">
         
         {/* Header */}
@@ -19,35 +19,35 @@ export default function ReservationSection() {
           ref={ref}
           className={`scroll-reveal ${isVisible ? 'is-visible' : ''} text-center mb-12 md:mb-16`}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2] mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-background-50 leading-[1.2] mb-4">
             ご予約
           </h2>
-          <p className="text-foreground-500 text-sm max-w-md mx-auto leading-relaxed">
+          <p className="text-background-50/80 text-sm max-w-md mx-auto leading-relaxed">
             心ほどける休日への扉。<br className="hidden sm:block" />
             お電話にてご予約・お問い合わせを承っております。
           </p>
         </div>
 
-        {/* コンテンツエリア：縦並び・中央揃え */}
+        {/* コンテンツエリア */}
         <div className="flex flex-col items-center gap-6 md:gap-8">
           
           {/* Phone Card (Main CTA) */}
           <div className="w-full max-w-[600px]">
             <div
-              className="scroll-reveal rounded-2xl bg-primary-500 text-background-50 p-10 h-full flex flex-col justify-center items-center text-center shadow-lg shadow-primary-500/10"
+              className="scroll-reveal rounded-2xl bg-background-50/5 border border-background-50/10 text-background-50 p-10 h-full flex flex-col justify-center items-center text-center backdrop-blur-sm"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
                 transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s',
               }}
             >
-              <div className="w-14 h-14 rounded-full bg-background-50/15 flex items-center justify-center mb-6 backdrop-blur-sm">
+              <div className="w-14 h-14 rounded-full bg-background-50/15 flex items-center justify-center mb-6">
                 <i className="ri-phone-line text-background-50 text-xl flex items-center justify-center"></i>
               </div>
               <h3 className="font-heading text-lg font-medium mb-2 tracking-widest">お電話でのご予約</h3>
               <a
                 href="tel:0269-XX-XXXX"
-                className="text-4xl md:text-5xl font-bold tracking-wider hover:opacity-80 transition-opacity cursor-pointer my-4 font-heading"
+                className="text-4xl md:text-5xl font-bold tracking-wider hover:text-accent-400 transition-colors duration-300 cursor-pointer my-4 font-heading"
               >
                 0269-XX-XXXX
               </a>
@@ -55,10 +55,10 @@ export default function ReservationSection() {
             </div>
           </div>
 
-          {/* Info & SNS Card (統合してスッキリと) */}
+          {/* Info & SNS Card */}
           <div className="w-full max-w-[600px]">
             <div
-              className="scroll-reveal rounded-2xl bg-background-50 p-10 md:p-12 flex flex-col items-center text-center shadow-sm border border-foreground-900/5"
+              className="scroll-reveal rounded-2xl bg-background-50/5 border border-background-50/10 p-10 md:p-12 flex flex-col items-center text-center backdrop-blur-sm"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -66,31 +66,31 @@ export default function ReservationSection() {
               }}
             >
               {/* ご予約について */}
-              <h3 className="font-heading text-lg font-semibold text-foreground-950 mb-6 tracking-widest">ご案内</h3>
-              <ul className="space-y-4 text-sm text-foreground-600 inline-block text-left w-full max-w-sm">
+              <h3 className="font-heading text-lg font-semibold text-background-50 mb-6 tracking-widest">ご案内</h3>
+              <ul className="space-y-4 text-sm text-background-50/80 inline-block text-left w-full max-w-sm">
                 <li className="flex items-start gap-3">
-                  <i className="ri-check-line text-accent-500 text-lg leading-none mt-[2px]"></i>
+                  <i className="ri-check-line text-accent-400 text-lg leading-none mt-[2px]"></i>
                   <span>チェックイン 15:00 / チェックアウト 11:00</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <i className="ri-check-line text-accent-500 text-lg leading-none mt-[2px]"></i>
+                  <i className="ri-check-line text-accent-400 text-lg leading-none mt-[2px]"></i>
                   <span>キャンセルは3日前まで無料</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <i className="ri-check-line text-accent-500 text-lg leading-none mt-[2px]"></i>
+                  <i className="ri-check-line text-accent-400 text-lg leading-none mt-[2px]"></i>
                   <span>お支払いは現金またはクレジットカード</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <i className="ri-check-line text-accent-500 text-lg leading-none mt-[2px]"></i>
+                  <i className="ri-check-line text-accent-400 text-lg leading-none mt-[2px]"></i>
                   <span>ペット同伴不可（介助犬を除く）</span>
                 </li>
               </ul>
 
-              {/* エレガントな区切り線 */}
-              <div className="w-10 h-[2px] bg-accent-500 my-10 opacity-60"></div>
+              {/* 区切り線 */}
+              <div className="w-10 h-[2px] bg-accent-400 my-10 opacity-60"></div>
 
               {/* SNS */}
-              <h3 className="font-heading text-sm font-semibold text-foreground-400 mb-5 tracking-widest uppercase">Official SNS</h3>
+              <h3 className="font-heading text-sm font-semibold text-background-50/60 mb-5 tracking-widest uppercase">Official SNS</h3>
               <div className="flex justify-center gap-4">
                 {snsLinks.map((sns) => (
                   <a
@@ -98,10 +98,10 @@ export default function ReservationSection() {
                     href={sns.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full border border-foreground-200 hover:border-accent-500 hover:bg-accent-50 flex items-center justify-center transition-all duration-300 cursor-pointer group"
+                    className="w-12 h-12 rounded-full border border-background-50/20 hover:border-accent-400 hover:bg-accent-400/10 flex items-center justify-center transition-all duration-300 cursor-pointer group"
                     aria-label={sns.name}
                   >
-                    <i className={`${sns.icon} text-foreground-400 group-hover:text-accent-600 text-xl transition-colors duration-300`}></i>
+                    <i className={`${sns.icon} text-background-50/80 group-hover:text-accent-400 text-xl transition-colors duration-300`}></i>
                   </a>
                 ))}
               </div>
