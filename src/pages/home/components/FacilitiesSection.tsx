@@ -5,17 +5,25 @@ export default function FacilitiesSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="facilities" className="py-20 md:py-28 bg-background-100">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+    <section id="facilities" className="relative z-10 pt-20 md:pt-36 pb-0">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 pb-14 md:pb-10">
         {/* Header */}
         <div
           ref={ref}
           className={`scroll-reveal ${isVisible ? 'is-visible' : ''} text-center mb-14 md:mb-18`}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
-            設備＆
-            <span className="text-primary-500">サービス</span>
-          </h2>
+          <div className="relative inline-block ">
+            <h2 className="relative z-10 font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
+              設備とサービス
+            </h2>
+            <p
+              className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-accent-400 whitespace-nowrap leading-none absolute left-1/2 -translate-x-1/2 z-0 pointer-events-none select-none"
+              style={{ bottom: '100%', marginBottom: '-0.5em' }}
+              aria-hidden
+            >
+              Facilities & Services
+            </p>
+          </div>
           <p className="mt-4 text-foreground-500 text-sm max-w-md mx-auto">
             心地よいご滞在を支える、館内の設備とサービスのご案内です。
           </p>
@@ -44,7 +52,6 @@ export default function FacilitiesSection() {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Facility icon grid */}
@@ -67,7 +74,14 @@ export default function FacilitiesSection() {
             </div>
           ))}
         </div>
+
       </div>
+
+
+      <div className="flex flex-col gap-2 mt-14 md:mt-20">
+          <div className="h-px bg-foreground-300/40" />
+          <div className="h-px bg-foreground-300/40" />
+        </div>
     </section>
   );
 }

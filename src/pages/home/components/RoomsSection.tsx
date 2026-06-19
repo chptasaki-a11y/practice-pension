@@ -11,17 +11,29 @@ export default function RoomsSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="rooms" className="py-20 md:py-28 bg-background-100">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+    <section id="rooms" className="relative z-10 pb-20 md:pb-28 pt-0">
+ <div className="flex flex-col gap-2 mb-10 md:mb-14">
+        <div className="h-px bg-foreground-300/40" />
+        <div className="h-px bg-foreground-300/40" /></div>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 pt-14 md:pt-20">
         {/* Header */}
         <div
           ref={ref}
-          className={`scroll-reveal ${isVisible ? 'is-visible' : ''} flex flex-col items-center text-center justify-center mb-14 md:mb-18 gap-4`}
+          className={`scroll-reveal ${isVisible ? 'is-visible' : ''} flex flex-col items-center text-center mb-14 md:mb-18`}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
-            お部屋のご紹介
-          </h2>
-          <p className="text-foreground-500 text-sm ">
+          <div className="relative inline-block ">
+            <h2 className="relative z-10 font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
+              お部屋とご料金
+            </h2>
+            <p
+              className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-accent-400 whitespace-nowrap leading-none absolute left-1/2 -translate-x-1/2 z-0 pointer-events-none select-none"
+              style={{ bottom: '100%', marginBottom: '-0.5em' }}
+              aria-hidden
+            >
+              Rooms & Price
+            </p>
+          </div>
+          <p className="mt-4 text-foreground-500 text-sm max-w-md">
             全3タイプのお部屋から、お好みのスタイルをお選びいただけます。
           </p>
         </div>
@@ -59,9 +71,6 @@ export default function RoomsSection() {
 
                 {/* Content */}
                 <div className="p-5 md:p-6 lg:p-8 flex flex-col justify-center w-full md:w-[55%] lg:w-[60%]">
-                  <p className={`text-xs tracking-wide uppercase mb-1 ${isFeatured ? 'text-background-50/70' : 'text-primary-500'}`}>
-                    {room.nameEn}
-                  </p>
                   <h3 className="font-heading text-xl md:text-2xl font-semibold mb-2 text-foreground-950">
                     {room.name}
                   </h3>

@@ -1,25 +1,38 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { accessInfo } from '@/mocks/homeData';
+import zarazara from '@/assets/zarazara.png';
 
 export default function AccessSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="access" className="py-20 md:py-28 bg-background-50">
+    <section id="access" 
+    className="scroll-mt-28 md:scroll-mt-14 py-20 md:py-28 pt-10">
+
+      
       <div className="max-w-[1100px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
         <div
           ref={ref}
           className={`scroll-reveal ${isVisible ? 'is-visible' : ''} text-center mb-14 md:mb-18`}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
-            アクセス
-          </h2>
+          <div className="relative inline-block ">
+            <h2 className="relative z-10 font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
+              アクセス
+            </h2>
+            <p
+              className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-accent-300 whitespace-nowrap leading-none absolute left-1/2 -translate-x-1/2 z-0 pointer-events-none select-none"
+              style={{ bottom: '100%', marginBottom: '-0.5em' }}
+              aria-hidden
+            >
+              Access
+            </p>
+          </div>
           <p className="mt-4 text-foreground-500 text-sm max-w-md mx-auto">
             信州の静かな森の中、日常から少し離れた場所に佇んでいます。
-          </p>
-          <p className="mt-4 text-foreground-500 text-lg max-w-md mx-auto">
-            〒389-2502 <br />長野県下高井郡野沢温泉村豊郷1234
+            <p className="mt-4 text-foreground-500 text-lg max-w-md mx-auto">
+              〒389-2502 <br />長野県下高井郡野沢温泉村豊郷123456
+            </p>
           </p>
         </div>
 
@@ -47,7 +60,7 @@ export default function AccessSection() {
         {/* Access info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Address */}
-         
+
 
           {/* Train */}
           <div

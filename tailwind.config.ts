@@ -12,6 +12,7 @@ export default {
         label: ['Noto Sans JP', 'Noto Sans', 'sans-serif'],
         sans: ['Noto Sans JP', 'Noto Sans', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
+        script: ['Allura', 'cursive'],  // ← 追加
       },
       colors: {
         background: {

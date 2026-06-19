@@ -1,9 +1,10 @@
 export const navLinks = [
   { label: 'About', href: '#about' },
-  { label: 'お部屋・料金', href: '#rooms' },
-  { label: '設備', href: '#facilities' },
-  { label: '料理', href: '#cuisine' },
-  { label: 'アクセス', href: '#access' },
+  { label: 'rooms', href: '#rooms' },
+  { label: 'facilities', href: '#facilities' },
+  { label: 'dishes', href: '#dishes' },
+  { label: 'access', href: '#access' },
+  { label: 'reservation', href: '#reservation' },
 ];
 
 export const rooms = [

@@ -11,18 +11,27 @@ export default function ReservationSection() {
   ];
 
   return (
-    <section id="reservation" className="py-20 md:py-28 bg-primary-500">
+    <section id="reservation" className="py-20 md:py-28 bg-primary-700 md:scroll-mt-14">
       <div className="max-w-[900px] mx-auto px-6 md:px-10 lg:px-16">
-        
+
         {/* Header */}
         <div
           ref={ref}
           className={`scroll-reveal ${isVisible ? 'is-visible' : ''} text-center mb-12 md:mb-16`}
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-background-50 leading-[1.2] mb-4">
-            ご予約
-          </h2>
-          <p className="text-background-50/80 text-sm max-w-md mx-auto leading-relaxed">
+          <div className="relative inline-block ">
+            <h2 className="relative z-10 font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-background-50 leading-[1.2]">
+              ご予約
+            </h2>
+            <p
+              className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-accent-600 whitespace-nowrap leading-none absolute left-1/2 -translate-x-1/2 z-0 pointer-events-none select-none"
+              style={{ bottom: '100%', marginBottom: '-0.5em' }}
+              aria-hidden
+            >
+              Reservation
+            </p>
+          </div>
+          <p className="mt-4 text-background-50/80 text-sm max-w-md mx-auto">
             心ほどける休日への扉。<br className="hidden sm:block" />
             お電話にてご予約・お問い合わせを承っております。
           </p>
@@ -30,7 +39,7 @@ export default function ReservationSection() {
 
         {/* コンテンツエリア */}
         <div className="flex flex-col items-center gap-6 md:gap-8">
-          
+
           {/* Phone Card (Main CTA) */}
           <div className="w-full max-w-[600px]">
             <div

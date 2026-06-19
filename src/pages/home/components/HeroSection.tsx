@@ -13,7 +13,7 @@ export default function HeroSection() {
       {/* Hero Image — always visible now, full width on mobile, right side on desktop */}
       <div className="w-full h-[55vh] md:h-[65vh] lg:absolute lg:right-0 lg:top-0 lg:w-[58%] lg:h-full">
         {/* Gradient overlay: fades to bottom on mobile, fades to left on desktop */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-background-50/5 to-background-50 lg:bg-gradient-to-r lg:from-background-50 lg:via-background-50/60 lg:to-transparent"></div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-background-50/5 to-background-50 lg:bg-gradient-to-r lg:from-background-50 lg:via-background-50/20 lg:to-transparent"></div>
         <img
           src="https://readdy.ai/api/search-image?query=Beautiful%20European%20style%20mansion%20in%20a%20peaceful%20forest%20setting%2C%20warm%20fairy%20tale%20atmosphere%2C%20ivy%20covered%20stone%20walls%2C%20soft%20golden%20sunlight%20filtering%20through%20trees%2C%20whimsical%20and%20enchanting%20garden%2C%20storybook%20cottage%20aesthetic%2C%20cream%20and%20warm%20beige%20tones%2C%20romantic%20and%20cozy%20vibe%2C%20high%20quality%20architectural%20photography%20with%20soft%20dreamy%20lighting&width=1200&height=1400&seq=hero-mansion-2026-a1&orientation=portrait"
           alt="洋風民宿の外観"

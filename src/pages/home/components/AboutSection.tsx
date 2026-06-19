@@ -1,5 +1,6 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
+
 export default function AboutSection() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
@@ -25,22 +26,28 @@ export default function AboutSection() {
 
           {/* Right: Content */}
           <div className="w-full lg:w-[62%]">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2] mb-5">
-              日常を離れ、
-              <br />
-              物語の中へ
-              <br />
-              誘う宿
-            </h2>
-            <p className="text-foreground-500 text-sm md:text-base leading-relaxed mb-4 max-w-lg">
-              オーベルジュ・メルヘンは、信州の静かな森に抱かれた小さな洋館です。
-            </p>
+            <div className="relative inline-block pt-10 md:pt-12 mb-5">
+              <h2 className="relative z-10 font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
+                日常を離れ、
+                <br />
+                物語の中へ
+                <br />
+                誘う宿
+              </h2>
+              <p
+                className="font-script text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-accent-300 whitespace-nowrap leading-none absolute z-0 pointer-events-none select-none left-1/5 -translate-x-1/2 translate-x-8 md:translate-x-12 lg:translate-x-16"
+                style={{ bottom: '100%', marginBottom: '-1em' }}
+                aria-hidden
+              >
+                About Us
+              </p>
+            </div>
             <p className="text-foreground-500 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
               築80年の英国風建築を丁寧にリノベーションし、古き良き時代の趣きと現代の快適さを融合させました。
               暖炉の灯り、アンティークの調度品、窓辺に広がる四季の風景——
               訪れるたびに新しい発見がある、そんな特別な場所でありたいと願っています。
               木洩れ日が差し込む静かな森の中、欧風の趣き漂う館で、日常を忘れるひとときをお過ごしください。
-            おいしいお料理と、あたたかなおもてなしがあなたをお待ちしています。
+              おいしいお料理と、あたたかなおもてなしがあなたをお待ちしています。
             </p>
           </div>
         </div>
