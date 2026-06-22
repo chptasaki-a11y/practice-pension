@@ -95,7 +95,7 @@ export default function RoomsSection() {
                     <span className="font-heading text-3xl md:text-4xl font-bold text-primary-500">
                       {room.price}
                     </span>
-                    <span className="text-sm ml-1 text-foreground-400">
+                    <span className="text-xs ml-1 text-foreground-400">
                       {room.per}
                     </span>
                   </div>

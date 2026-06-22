@@ -15,17 +15,21 @@ export default function CuisineSection() {
 
   return (
     <section id="dishes" className="py-20 md:py-40 bg-background-50 relative">
-      <img src={background} alt="お料理背景"
-       className="absolute top-0 left-0 w-full h-full object-cover object-top" />
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+      {/* 変更点: hidden md:block を追加し、モバイル版で背景を非表示に */}
+      <img
+        src={background}
+        alt="お料理背景"
+        className="hidden md:block absolute top-0 left-0 w-full h-full object-cover object-top"
+      />
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         {/* Header */}
         <div
           ref={ref}
           className={`scroll-reveal ${isVisible ? 'is-visible' : ''} text-center mb-10 md:mb-14`}
         >
-         <div className="relative inline-block ">
+          <div className="relative inline-block">
             <h2 className="relative z-10 font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
-               お料理
+              お料理
             </h2>
             <p
               className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-accent-300 whitespace-nowrap leading-none absolute left-1/2 -translate-x-1/2 z-0 pointer-events-none select-none"
@@ -36,14 +40,14 @@ export default function CuisineSection() {
             </p>
           </div>
           <p className="mt-4 text-foreground-500 text-sm max-w-lg md:max-w-xl mx-auto">
-              夕食は、信州牛や旬の野菜をふんだんに使った全7品のディナーコース。<br />
-              朝食は、焼きたてのパンと高原の卵や自家製ジャムをお楽しみいただけます。
-            </p>
+            夕食は、信州牛や旬の野菜をふんだんに使った全7品のディナーコース。<br />
+            朝食は、焼きたてのパンと高原の卵や自家製ジャムをお楽しみいただけます。
+          </p>
         </div>
 
         {/* Image grid: 上3枚・下2枚 */}
         <div
-          className="scroll-reveal flex flex-col items-center gap-4 md:gap-6 m-9"
+          className="scroll-reveal flex flex-col items-center gap-4 md:gap-6 mt-9"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
@@ -51,45 +55,43 @@ export default function CuisineSection() {
           }}
         >
           {/* 上段：3枚 */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 ">
-  {cuisineImages.slice(0, 3).map((img) => (
-    <div
-      key={img.seq}
-      // 変更点1: `relative` を追加して絶対配置の基準にする
-      className="relative w-[260px] md:w-[320px] rounded-2xl overflow-hidden cursor-pointer group"
-    >
-      <img
-        src={cuisineSrcs[img.seq]}
-        alt={img.alt}
-        className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      
-      {/* 変更点2: `absolute` を使って画像の上に重ねる */}
-      {/* グラデーションを敷いて文字の視認性を高めています */}
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 pt-6 pointer-events-none">
-        <p className="text-sm md:text-base text-white text-center font-heading drop-shadow-md">
-          {img.alt}
-        </p>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-
-          {/* 下段：2枚（中央寄せ） */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {cuisineImages.slice(3, 5).map((img) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full">
+            {cuisineImages.slice(0, 3).map((img) => (
               <div
                 key={img.seq}
-                className="relative w-[260px] md:w-[320px] rounded-2xl overflow-hidden cursor-pointer group"
+                className="relative w-full rounded-2xl overflow-hidden cursor-pointer group"
               >
                 <img
                   src={cuisineSrcs[img.seq]}
                   alt={img.alt}
                   className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <p className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent text-sm md:text-base text-white text-center font-heading drop-shadow-md">{img.alt}</p>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 pt-6 pointer-events-none">
+                  <p className="text-sm md:text-xs lg:text-base text-white text-center font-heading drop-shadow-md">
+                    {img.alt}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* 下段：2枚（中央寄せ） */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full md:w-2/3">
+            {cuisineImages.slice(3, 5).map((img) => (
+              <div
+                key={img.seq}
+                className="relative w-full rounded-2xl overflow-hidden cursor-pointer group"
+              >
+                <img
+                  src={cuisineSrcs[img.seq]}
+                  alt={img.alt}
+                  className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 pt-6 pointer-events-none">
+                  <p className="text-sm md:text-xs lg:text-base text-white text-center font-heading drop-shadow-md">
+                    {img.alt}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -104,7 +106,6 @@ export default function CuisineSection() {
             transition: 'opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s',
           }}
         >
-
         </div>
       </div>
     </section>

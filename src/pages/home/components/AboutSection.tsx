@@ -1,18 +1,17 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-
 export default function AboutSection() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-background-50">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+    <section id="about" className="relative py-20 md:py-28 bg-background-50">
+  <div className="relative z-20 max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         <div
           ref={ref}
-          className={`scroll-reveal ${isVisible ? 'is-visible' : ''} flex flex-col lg:flex-row gap-12 lg:gap-20 items-center`}
+          className={`scroll-reveal ${isVisible ? 'is-visible' : ''} flex flex-col md:flex-row gap-12 lg:gap-20 items-center`}
         >
           {/* Left: Image */}
-          <div className="w-full lg:w-[38%] flex-shrink-0">
+          <div className="w-full md:w-[38%] flex-shrink-0">
             <div className="relative">
               <div className="mt-6 rounded-3xl overflow-hidden">
                 <img
@@ -25,9 +24,9 @@ export default function AboutSection() {
           </div>
 
           {/* Right: Content */}
-          <div className="w-full lg:w-[62%]">
+          <div className="w-full md:w-[62%]">
             <div className="relative inline-block pt-10 md:pt-12 mb-5">
-              <h2 className="relative z-10 font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
+              <h2 className="relative z-10 font-heading text-2xl md:text-4xl lg:text-5xl font-bold text-foreground-950 leading-[1.2]">
                 日常を離れ、
                 <br />
                 物語の中へ

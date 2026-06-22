@@ -28,12 +28,11 @@ export default function AccessSection() {
               Access
             </p>
           </div>
-          <p className="mt-4 text-foreground-500 text-sm max-w-md mx-auto">
-            信州の静かな森の中、日常から少し離れた場所に佇んでいます。
+         
             <p className="mt-4 text-foreground-500 text-lg max-w-md mx-auto">
               〒389-2502 <br />長野県下高井郡野沢温泉村豊郷123456
             </p>
-          </p>
+        
         </div>
 
         {/* Map */}

@@ -11,12 +11,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   font-family: var(--font-body);
   background-color: oklch(0.993 0.003 93);
   color: oklch(0.127 0.022 85);
+  overflow-x: clip;
 }
 
 ::selection {

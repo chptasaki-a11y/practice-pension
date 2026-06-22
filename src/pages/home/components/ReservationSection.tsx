@@ -79,7 +79,7 @@ export default function ReservationSection() {
               <ul className="space-y-4 text-sm text-background-50/80 inline-block text-left w-full max-w-sm">
                 <li className="flex items-start gap-3">
                   <i className="ri-check-line text-accent-400 text-lg leading-none mt-[2px]"></i>
-                  <span>チェックイン 15:00 / チェックアウト 11:00</span>
+                  <span>チェックイン:15:00~20:00 <br /> チェックアウト:~11:00</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <i className="ri-check-line text-accent-400 text-lg leading-none mt-[2px]"></i>

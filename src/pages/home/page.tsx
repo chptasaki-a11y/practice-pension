@@ -7,16 +7,19 @@ import CuisineSection from './components/CuisineSection';
 import AccessSection from './components/AccessSection';
 import ReservationSection from './components/ReservationSection';
 import Footer from './components/Footer';
-import FloatingReservationButton from '@/components/feature/FloatingReservationButton';
 import background from '@/assets/background.png';
+
+
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-background-50">
       <Navbar />
-      <FloatingReservationButton />
-      <HeroSection />
-      <AboutSection />
+
+
+    <HeroSection />
+    <AboutSection />
+
 
       {/* Rooms + Facilities 共通背景 */}
       <div className="relative">
