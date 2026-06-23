@@ -25,7 +25,7 @@ export default function FacilitiesSection() {
             </p>
           </div>
           <p className="mt-4 text-foreground-500 text-sm max-w-md mx-auto">
-            心地よいご滞在を支える、館内の設備とサービスのご案内です。
+            心地よいご滞在を支える、<br className="md:hidden" />館内の設備とサービスのご案内です。
           </p>
         </div>
 
@@ -69,8 +69,8 @@ export default function FacilitiesSection() {
               <div className="w-11 h-11 rounded-xl bg-primary-100 flex items-center justify-center mb-3">
                 <i className={`${item.icon} text-primary-500 text-xl w-5 h-5 flex items-center justify-center`}></i>
               </div>
-              <p className="text-xm font-semibold text-foreground-950 mb-1">{item.label}</p>
-              <p className="text-xs text-foreground-400">{item.description}</p>
+              <p className="text-xm  font-semibold text-foreground-950 mb-1">{item.label}</p>
+              <p className="text-xs text-foreground-500">{item.description}</p>
             </div>
           ))}
         </div>

@@ -1,7 +1,6 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import hero from '@/assets/hero.png';
 import heromb from '@/assets/hero-mb.jpg';
-import ribbon from '@/assets/ribbon.png';
 
 export default function HeroSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
@@ -36,7 +35,7 @@ export default function HeroSection() {
         >
           {/* h1 を基準にするラッパー */}
           <div className="relative">
-            <h1 className="relative z-20 font-heading text-2xl md:text-4xl lg:text-5xl xl:text-5xl font-bold leading-[1.15] [text-shadow:_0_0_10px_#fff,_0_0_20px_#fff,_0_0_30px_#fff]">
+            <h1 className="relative z-20 font-heading text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.15] [text-shadow:_0_0_10px_#fff,_0_0_20px_#fff,_0_0_30px_#fff]">
               森の奥に佇む
               <br />
               <span className="italic text-primary-500">メルヘン</span>
@@ -44,12 +43,6 @@ export default function HeroSection() {
               <br />
               心ほどける休日を
             </h1>
-            <img
-              src={ribbon}
-              alt=""
-              aria-hidden
-             className="absolute top-full -left-5 -mt-4 z-10 w-[120%] md:w-[150%] rotate-[20deg] origin-top-left pointer-events-none min-[1441px]:hidden"
-            />
           </div>
         </div>
       </div>

@@ -39,9 +39,13 @@ export default function CuisineSection() {
               Dishes
             </p>
           </div>
-          <p className="mt-4 text-foreground-500 text-sm max-w-lg md:max-w-xl mx-auto">
-            夕食は、信州牛や旬の野菜をふんだんに使った全7品のディナーコース。<br />
-            朝食は、焼きたてのパンと高原の卵や自家製ジャムをお楽しみいただけます。
+          <p className="mt-4 text-foreground-500 text-sm max-w-lg md:max-w-xl mx-auto md:hidden">
+            夕食は、信州牛や旬の野菜を使った<br />全7品のディナーコース。<br />
+            朝食は、高原の卵や自家製ジャムを<br />お楽しみいただけます。
+          </p>
+          <p className="mt-4 text-foreground-500 text-sm max-w-lg md:max-w-xl mx-auto hidden md:block">
+            夕食は、信州牛や旬の野菜をふんだんに使った<br />全7品のディナーコース。<br />
+            朝食は、焼きたてのパンと高原の卵や自家製ジャムを<br />お楽しみいただけます。
           </p>
         </div>
 

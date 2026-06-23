@@ -34,7 +34,7 @@ export default function RoomsSection() {
             </p>
           </div>
           <p className="mt-4 text-foreground-500 text-sm max-w-md">
-            全3タイプのお部屋から、お好みのスタイルをお選びいただけます。
+            全3タイプのお部屋から、お好みのスタイルを<br />お選びいただけます。
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default function RoomsSection() {
             transition: 'opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s',
           }}
         >
-          <p className="text-foreground-400 text-xs">
+          <p className="text-foreground-400 text-xs text-left min-[455px]:text-center">
             ※ 表示価格は税込です。別途入湯税（お一人様150円）を頂戴いたします。
             <br />
             ※ お一人様でのご利用は、各プラン+5,000円の追加料金となります。

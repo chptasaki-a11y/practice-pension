@@ -32,8 +32,7 @@ export default function ReservationSection() {
             </p>
           </div>
           <p className="mt-4 text-background-50/80 text-sm max-w-md mx-auto">
-            心ほどける休日への扉。<br className="hidden sm:block" />
-            お電話にてご予約・お問い合わせを承っております。
+            お電話にてご予約お問い合わせを承っております。
           </p>
         </div>
 
